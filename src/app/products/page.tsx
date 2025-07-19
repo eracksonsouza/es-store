@@ -1,5 +1,5 @@
 import { getAllProducts } from "../lib/api";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../(home)/components/ProductCard";
 
 const ProductsPage = async () => {
   const products = await getAllProducts();

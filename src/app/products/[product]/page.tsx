@@ -1,6 +1,7 @@
 import { getProductsById } from "@/app/lib/api";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductPageProps {
   params: Promise<{
@@ -13,6 +14,28 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
   const productData = await getProductsById(product);
   return (
     <main className="container mx-auto px-4 py-8">
+      <nav className="mb-6 text-sm text-gray-600">
+        <Link href="/" className="hover:text-blue-500 ">
+          Home
+        </Link>
+        <span className="mx-2"> › </span>
+
+        <Link href="/products" className="hover:text-blue-500">
+          Produtos
+        </Link>
+        <span className="mx-2"> › </span>
+
+        <Link
+          href={`/categories/${productData.category}`}
+          className="hover:text-blue-600 capitalize"
+        >
+          {productData.category}
+        </Link>
+        <span className="mx-2">›</span>
+        <span className="text-gray-900 truncate underline">
+          {productData.title}
+        </span>
+      </nav>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* imagem do produto */}
         <div className="relative h-96 lg:h-[500px]">

@@ -1,4 +1,4 @@
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard from "@/app/(home)/components/ProductCard";
 import { getProductsByCategory } from "@/app/lib/api";
 
 interface CategoryPageProps {
@@ -8,7 +8,7 @@ interface CategoryPageProps {
 }
 
 const CategoryPage = async ({ params }: CategoryPageProps) => {
-    const { category } = await params;
+  const { category } = await params;
   const products = await getProductsByCategory(category);
   return (
     <main className="container mx-auto px-4 py-8">
