@@ -45,8 +45,8 @@ const defaultConfig: CategoryConfig = {
   hoverTo: "hover:to-gray-200",
 };
 
-export const useCategoryConfig = (categoryName: string): CategoryConfig => {
+export const getCategoryConfig = (categoryName: string): CategoryConfig => {
   return categoryConfigs[categoryName] || defaultConfig;
-}
+};
 
 export type { CategoryConfig };
