@@ -2,16 +2,17 @@ import ProductCard from "@/app/components/ProductCard";
 import { getProductsByCategory } from "@/app/lib/api";
 
 interface CategoryPageProps {
-  params: {
+  params: Promise<{
     category: string;
-  };
+  }>;
 }
 
 const CategoryPage = async ({ params }: CategoryPageProps) => {
-  const products = await getProductsByCategory(params.category);
+    const { category } = await params;
+  const products = await getProductsByCategory(category);
   return (
     <main className="container mx-auto px-4 py-8">
-      <h1>{decodeURIComponent(params.category)}</h1>
+      <h1>{decodeURIComponent(category)}</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {products.map((product) => (
