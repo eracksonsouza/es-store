@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
+
+  return (
   <section className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
     <div className="container mx-auto px-4 py-20">
       <div className="text-center">
@@ -13,12 +15,13 @@ export const HeroSection = () => {
         <Link href="/products">
           <Button
             size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100"
+            className="bg-white text-blue-600 hover:bg-gray-100 cursor-pointer"
           >
             Ver Todos os Produtos
           </Button>
         </Link>
       </div>
     </div>
-  </section>;
+  </section>
+  )
 };
