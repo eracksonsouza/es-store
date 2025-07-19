@@ -1,24 +1,35 @@
 import { getCategories } from "../lib/api";
-import Link from "next/link";
+import { CategoryCard } from "@/components/shared/CategoryCard";
+import { getCategoryConfig } from "@/app/lib/categoryConfig";
 
-export default async function CategoriesPage() {
+const CategoriesPage = async () => {
   const categories = await getCategories();
-
   return (
-    <div className="px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Categorias</h1>
+    <div className="container mx-auto px-4 py-8">
+      <div className="text-center mb-12">
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          Todas as Categorias
+        </h1>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Explore nossa variedade de produtos organizados por categoria
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {categories.map((category) => (
-          <Link
-            key={category}
-            href={`/categories/${category}`}
-            className="p-6 border rounded-lg hover:shadow-lg transition-shadow text-center block"
-          >
-            <h3 className="text-xl font-semibold capitalize">{category}</h3>
-          </Link>
-        ))}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {categories.map((category) => {
+          const config = getCategoryConfig(category);
+
+          return (
+            <CategoryCard
+              key={category}
+              categoryName={category}
+              config={config}
+            />
+          );
+        })}
       </div>
     </div>
   );
-}
+};
+
+export default CategoriesPage;
