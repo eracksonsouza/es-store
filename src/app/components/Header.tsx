@@ -54,10 +54,12 @@ const Header = () => {
           </nav>
         </SheetContent>
       </Sheet>
-
+      <Link href="/" className="flex items-center gap-2 mb-4 md:mb-0">
+    
       <h1 className="text-lg font-semibold">
         <span className="text-purple-900">ES Store</span>
       </h1>
+      </Link>
 
       <Button size="icon" variant="outline">
         <ShoppingCartIcon />
