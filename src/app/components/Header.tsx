@@ -11,10 +11,12 @@ import {
   Sheet,
   SheetContent,
   SheetHeader,
+  SheetDescription,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import Link from "next/link";
+
 
 const Header = () => {
   return (
@@ -28,6 +30,7 @@ const Header = () => {
         <SheetContent side="left">
           <SheetHeader>
             <SheetTitle>Menu</SheetTitle>
+            <SheetDescription>Navegue pelas páginas do site</SheetDescription>
           </SheetHeader>
           <nav className="flex flex-col gap-2 mt-2">
             <Link href="/">
