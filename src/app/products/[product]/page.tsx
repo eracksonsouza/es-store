@@ -1,5 +1,6 @@
 import { getProductsById } from "@/app/lib/api";
 import { Button } from "@/components/ui/button";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -70,10 +71,7 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
           <div className="space-y-4">
             <p className="text-gray-700">{productData.description}</p>
             <div className="flex gap-4">
-              <Button variant="default" className="cursor-pointer">
-                {" "}
-                Adicionar ao Carrinho{" "}
-              </Button>
+              <AddToCartButton product={productData} />
               <Button variant="outline" className="cursor-pointer">
                 {" "}
                 Comprar Agora{" "}
