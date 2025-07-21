@@ -1,6 +1,14 @@
 import { getProductsById } from "@/app/lib/api";
 import { Button } from "@/components/ui/button";
 import AddToCartButton from "@/components/cart/AddToCartButton";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -16,26 +24,39 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
   return (
     <main className="container mx-auto px-4 py-8">
       <nav className="mb-6 text-sm text-gray-600">
-        <Link href="/" className="hover:text-blue-500 ">
-          Home
-        </Link>
-        <span className="mx-2"> › </span>
 
-        <Link href="/products" className="hover:text-blue-500">
-          Produtos
-        </Link>
-        <span className="mx-2"> › </span>
-
-        <Link
-          href={`/categories/${productData.category}`}
-          className="hover:text-blue-600 capitalize"
-        >
-          {productData.category}
-        </Link>
-        <span className="mx-2">›</span>
-        <span className="text-gray-900 truncate underline">
-          {productData.title}
-        </span>
+        <Breadcrumb className="mb-6">
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/">Home</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link href="/products">Produtos</Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink asChild>
+                <Link
+                  href={`/categories/${productData.category}`}
+                  className="capitalize"
+                >
+                  {productData.category}
+                </Link>
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="max-w-xs truncate">
+                {productData.title}
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
       </nav>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* imagem do produto */}
