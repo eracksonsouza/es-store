@@ -11,11 +11,9 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800">
+    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800 mt-auto">
       <div className="container mx-auto px-4 py-12">
-        {/* Seção Principal */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Informações da Empresa */}
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white mb-4">FakeStore</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
@@ -23,7 +21,6 @@ const Footer = () => {
               melhores preços e atendimento excepcional.
             </p>
 
-            {/* Redes Sociais */}
             <div className="flex space-x-4 mt-4">
               <Link
                 href="#"
@@ -52,7 +49,6 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Links Rápidos */}
           <div>
             <h4 className="text-md font-semibold text-white mb-4">
               Links Rápidos
@@ -93,7 +89,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Suporte */}
           <div>
             <h4 className="text-md font-semibold text-white mb-4">Suporte</h4>
             <ul className="space-y-2">
@@ -132,7 +127,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contato */}
           <div>
             <h4 className="text-md font-semibold text-white mb-4">Contato</h4>
             <div className="space-y-3">

@@ -38,7 +38,7 @@ const CartPage = () => {
   
   const CartItem = ({ item }: { item: CartItemType }) => (
     <div className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow">
-      <div className="flex items-start gap-4">
+      <div className="flex items-center gap-6 h-[120px]">
         <div className="flex-shrink-0">
           <Image
             src={item.image}
@@ -58,7 +58,7 @@ const CartPage = () => {
           </p>
 
           <div className="flex items-center justify-between">
-            <div className="flex items-center border border-gray-300 rounded-md">
+            <div className="flex items-center rounded-md">
               <Button
                 onClick={() => updateQuantity(item.id, item.quantity - 1)}
                 disabled={item.quantity <= 1}
