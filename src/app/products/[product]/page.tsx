@@ -59,7 +59,6 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
         </Breadcrumb>
       </nav>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        {/* imagem do produto */}
         <div className="relative h-96 lg:h-[500px]">
           <Image
             src={productData.image}
@@ -69,8 +68,6 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
-
-        {/* detalhes do produto */}
         <div className="space-y-6">
           <h1 className="font-bold text-4xl">{productData.title}</h1>
 

@@ -19,6 +19,7 @@ const AddToCartButton = ({ product }: AddToCartButtonProps) => {
     <Button
       onClick={handleAddToCart}
       variant="default"
+      className="cursor-pointer"
     >
       Adicionar ao Carrinho
     </Button>

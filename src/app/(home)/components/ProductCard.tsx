@@ -8,29 +8,48 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <section className="group border rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-200">
-      <Link href={`/products/${product.id}`} className="block">
-        <div className="relative w-full h-48 mb-4">
-          <Image
-            src={product.image}
-            alt={product.title}
-            fill
-            className="object-contain group-hover:scale-105 transition-transform"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
-        <h3 className="font-semibold text-lg mb-2 line-clamp-2 group-hover:text-blue-600">
-          {product.title}
-        </h3>
-        <p className="text-xl font-bold text-green-600 mb-1">
-          ${product.price.toFixed(2)}
-        </p>
-        <div className="flex items-center text-sm text-gray-600">
-          <span className="text-yellow-500">⭐</span>
-          <span className="ml-1">{product.rating.rate}</span>
-          <span className="ml-1">({product.rating.count} reviews)</span>
+    <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden group">
+      <Link href={`/products/${product.id}`} className="block h-full">
+        <div className="flex flex-col h-full">
+          <div className="relative w-full h-48 bg-gray-50 flex items-center justify-center p-4">
+            <Image
+              src={product.image}
+              alt={product.title}
+              fill
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+          </div>
+          
+          <div className="p-4 flex flex-col flex-grow">
+            <span className="text-xs uppercase tracking-wide text-gray-500 font-medium mb-2">
+              {product.category}
+            </span>
+            
+            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+              {product.title}
+            </h3>
+            
+            <div className="flex items-center mb-3">
+              <div className="flex items-center">
+                <span className="text-yellow-400 text-sm">⭐</span>
+                <span className="ml-1 text-sm font-medium text-gray-700">
+                  {product.rating.rate}
+                </span>
+              </div>
+              <span className="ml-2 text-xs text-gray-500">
+                ({product.rating.count} avaliações)
+              </span>
+            </div>
+            
+            <div className="mt-auto">
+              <p className="text-2xl font-bold text-green-600">
+                ${product.price.toFixed(2)}
+              </p>
+            </div>
+          </div>
         </div>
       </Link>
-    </section>
+    </div>
   );
 }
