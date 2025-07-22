@@ -2,7 +2,6 @@ import { getAllProducts } from "../lib/api";
 import { CategoriesSection } from "./components/CategoriesSection";
 import { CTASection } from "./components/CTASection";
 import { FeaturedProducts } from "./components/FeaturedProducts";
-import Footer from "./components/Footer";
 import { HeroSection } from "./components/HeroSection";
 
 const HomePage = async () => {
@@ -13,7 +12,6 @@ const HomePage = async () => {
       <FeaturedProducts products={products} />
       <CategoriesSection />
       <CTASection />
-      <Footer />
     </main>
   );
 };
