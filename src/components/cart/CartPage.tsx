@@ -154,13 +154,11 @@ const CartPage = () => {
                   </div>
                 </div>
 
-                <button className="w-full bg-blue-600 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors mb-3">
+                <button className=" cursor-pointer w-full bg-[#0b4f6c] text-white font-semibold py-3 px-4 rounded-lg hover:bg-[#0a3e4c] transition-colors mb-3">
                   Finalizar Compra
                 </button>
                 
-                <button className="w-full border border-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg hover:bg-gray-50 transition-colors">
-                  Salvar para depois
-                </button>
+                
               </div>
             </div>
           </div>
