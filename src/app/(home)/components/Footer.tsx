@@ -11,12 +11,12 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 border-t border-gray-800 mt-auto">
+    <footer className="bg-[#0B4F6C] text-gray-950 border-t border-gray-800 mt-auto">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-white mb-4">FakeStore</h3>
-            <p className="text-sm text-gray-400 leading-relaxed">
+            <p className="text-sm text-gray-50 ">
               Sua loja online de confiança. Produtos de qualidade com os
               melhores preços e atendimento excepcional.
             </p>
@@ -24,25 +24,25 @@ const Footer = () => {
             <div className="flex space-x-4 mt-4">
               <Link
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-50 hover:text-white transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-50 hover:text-white transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-50 hover:text-white transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
                 href="#"
-                className="text-gray-400 hover:text-white transition-colors"
+                className="text-gray-50 hover:text-white transition-colors"
               >
                 <Github className="h-5 w-5" />
               </Link>
@@ -57,7 +57,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Sobre Nós
                 </Link>
@@ -65,7 +65,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/products"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Produtos
                 </Link>
@@ -73,7 +73,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Contato
                 </Link>
@@ -81,7 +81,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/faq"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   FAQ
                 </Link>
@@ -95,7 +95,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/shipping"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Envios e Entregas
                 </Link>
@@ -103,7 +103,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/returns"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Trocas e Devoluções
                 </Link>
@@ -111,7 +111,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/privacy"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Política de Privacidade
                 </Link>
@@ -119,7 +119,7 @@ const Footer = () => {
               <li>
                 <Link
                   href="/terms"
-                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                  className="text-sm text-gray-50 hover:text-white transition-colors"
                 >
                   Termos de Uso
                 </Link>
@@ -131,8 +131,8 @@ const Footer = () => {
             <h4 className="text-md font-semibold text-white mb-4">Contato</h4>
             <div className="space-y-3">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                <p className="text-sm text-gray-400">
+                <MapPin className="h-4 w-4 text-gray-50 flex-shrink-0" />
+                <p className="text-sm text-gray-50">
                   Rua Exemplo, 123
                   <br />
                   Bairro - Cidade/UF
@@ -142,13 +142,13 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center space-x-3">
-                <Phone className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                <p className="text-sm text-gray-400">(11) 1234-5678</p>
+                <Phone className="h-4 w-4 text-gray-50 flex-shrink-0" />
+                <p className="text-sm text-gray-50">(11) 1234-5678</p>
               </div>
 
               <div className="flex items-center space-x-3">
-                <Mail className="h-4 w-4 text-gray-400 flex-shrink-0" />
-                <p className="text-sm text-gray-400">contato@fakestore.com</p>
+                <Mail className="h-4 w-4 text-gray-50 flex-shrink-0" />
+                <p className="text-sm text-gray-50">contato@fakestore.com</p>
               </div>
             </div>
           </div>
