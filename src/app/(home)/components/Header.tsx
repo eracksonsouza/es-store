@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import Link from "next/link";
 import CartIcon from "@/components/cart/CartIcon";
+import Image from "next/image";
 
 const Header = () => {
   return (
@@ -64,9 +65,14 @@ const Header = () => {
           </SheetContent>
         </Sheet>
         <Link href="/" className="flex items-center gap-2 mb-4 md:mb-0">
-          <h1 className="text-lg font-semibold">
-            <span className="text-purple-900">ES Store</span>
-          </h1>
+          <Image
+            src="/es-store.png"
+            alt="ES Store Logo"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+          <h1 className="text-lg font-semibold"></h1>
         </Link>
         <CartIcon />
       </div>
