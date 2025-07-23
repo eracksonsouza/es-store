@@ -20,7 +20,7 @@ const CartPage = () => {
       </p>
       <Link
         href="/"
-        className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors"
+        className="inline-flex items-center bg-[#0B4F6C] text-white rounded-lg px-4 py-2 hover:bg-[#0A3E54]"
       >
         <ArrowLeft className="mr-2 h-4 w-4" />
         Continuar Comprando
@@ -105,7 +105,7 @@ const CartPage = () => {
         <div className="mb-8">
           <Link
             href="/"
-            className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4 font-medium"
+            className="inline-flex items-center text-[#4ab4e2] hover:text-[#233e49] mb-4 font-medium"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Voltar às compras

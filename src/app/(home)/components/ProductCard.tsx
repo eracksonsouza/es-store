@@ -26,7 +26,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               {product.category}
             </span>
             
-            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors leading-tight">
+            <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-gray-500 transition-colors leading-tight">
               {product.title}
             </h3>
             
@@ -43,7 +43,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             </div>
             
             <div className="mt-auto">
-              <p className="text-2xl font-bold text-green-600">
+              <p className="text-2xl font-bold text-green-800">
                 ${product.price.toFixed(2)}
               </p>
             </div>
