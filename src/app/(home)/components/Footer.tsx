@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white mb-4">FakeStore</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">ES Store</h3>
             <p className="text-sm text-gray-50 ">
               Sua loja online de confiança. Produtos de qualidade com os
               melhores preços e atendimento excepcional.
@@ -148,7 +148,7 @@ const Footer = () => {
 
               <div className="flex items-center space-x-3">
                 <Mail className="h-4 w-4 text-gray-50 flex-shrink-0" />
-                <p className="text-sm text-gray-50">contato@fakestore.com</p>
+                <p className="text-sm text-gray-50">contato@esstore.com</p>
               </div>
             </div>
           </div>
@@ -158,7 +158,7 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-gray-400">
-            © {new Date().getFullYear()} FakeStore. Todos os direitos
+            © {new Date().getFullYear()} ES Store. Todos os direitos
             reservados.
           </p>
 
