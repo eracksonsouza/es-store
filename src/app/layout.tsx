@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true}>
+      <body >
         <div className="min-h-screen flex flex-col">
           <CartProvider>
             <Header />
