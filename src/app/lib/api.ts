@@ -1,22 +1,46 @@
 import { Product } from "@/app/types/product";
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:3001/api";
+  process.env.NEXT_PUBLIC_API_BASE_URL || "https://fakestoreapi.com";
 
 export async function getAllProducts(): Promise<Product[]> {
-  const res = await fetch(`${BASE_URL}/products`);
-  if (!res.ok) {
-    throw new Error("Failed to fetch products");
+  try {
+    const res = await fetch(`${BASE_URL}/products`, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!res.ok) {
+      console.error(
+        `Failed to fetch products: ${res.status} ${res.statusText}`
+      );
+      throw new Error("Failed to fetch products");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    throw error;
   }
-  return res.json();
 }
 
 export async function getProductsById(id: string): Promise<Product> {
-  const res = await fetch(`${BASE_URL}/products/${id}`);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch product with id ${id}`);
+  try {
+    const res = await fetch(`${BASE_URL}/products/${id}`, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!res.ok) {
+      console.error(
+        `Failed to fetch product ${id}: ${res.status} ${res.statusText}`
+      );
+      throw new Error(`Failed to fetch product with id ${id}`);
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error(`Error fetching product ${id}:`, error);
+    throw error;
   }
-  return res.json();
 }
 
 export async function getCategories(): Promise<string[]> {
@@ -56,9 +80,21 @@ export async function getCategories(): Promise<string[]> {
 export async function getProductsByCategory(
   category: string
 ): Promise<Product[]> {
-  const res = await fetch(`${BASE_URL}/products/category/${category}`);
-  if (!res.ok) {
-    throw new Error(`Failed to fetch products for category ${category}`);
+  try {
+    const res = await fetch(`${BASE_URL}/products/category/${category}`, {
+      next: { revalidate: 3600 }, // Cache for 1 hour
+    });
+
+    if (!res.ok) {
+      console.error(
+        `Failed to fetch category ${category}: ${res.status} ${res.statusText}`
+      );
+      throw new Error(`Failed to fetch products for category ${category}`);
+    }
+
+    return res.json();
+  } catch (error) {
+    console.error(`Error fetching category ${category}:`, error);
+    throw error;
   }
-  return res.json();
 }
