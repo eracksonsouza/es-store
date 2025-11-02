@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { type LucideIcon } from "lucide-react";
+import Image from "next/image";
 
 interface CategoryConfig {
-  icon: LucideIcon;
+  image: string;
   colorFrom: string;
   colorTo: string;
   hoverFrom: string;
@@ -16,25 +16,24 @@ interface CategoryCardProps {
 }
 
 export const CategoryCard = ({ categoryName, config }: CategoryCardProps) => {
-  const IconComponent = config.icon;
-
   return (
     <Link
       href={`/categories/${encodeURIComponent(categoryName)}`}
       className={`
-        group p-6 rounded-lg transition-all duration-300
-        bg-gradient-to-br ${config.colorFrom} ${config.colorTo}
-        ${config.hoverFrom} ${config.hoverTo}
+        group relative overflow-hidden rounded-lg transition-all duration-300
         hover:shadow-lg
+        h-48
       `}
     >
-      <div className="text-center">
-        <div
-          className={`flex items-center justify-center mb-4 ${config.iconColor}`}
-        >
-          <IconComponent className="w-12 h-12 transition-transform group-hover:scale-110" />
-        </div>
-        <h3 className="font-semibold text-gray-900 capitalize">
+      <Image
+        src={config.image}
+        alt={categoryName}
+        fill
+        className="object-cover transition-transform group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+      <div className="absolute inset-0 flex items-end justify-center p-6">
+        <h3 className="font-semibold text-white capitalize text-lg z-10">
           {categoryName.replace("'s", "'s")}
         </h3>
       </div>

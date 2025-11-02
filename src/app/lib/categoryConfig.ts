@@ -1,14 +1,5 @@
-import {
-  Smartphone,
-  Gem,
-  ShirtIcon,
-  Sparkles,
-  Package,
-  type LucideIcon,
-} from "lucide-react";
-
 interface CategoryConfig {
-  icon: LucideIcon;
+  image: string;
   colorFrom: string;
   colorTo: string;
   hoverFrom: string;
@@ -18,15 +9,16 @@ interface CategoryConfig {
 
 const categoryConfigs: Record<string, CategoryConfig> = {
   electronics: {
-    icon: Smartphone,
+    image: "/tech-category.png",
     colorFrom: "from-blue-50",
     colorTo: "to-blue-100",
     hoverFrom: "hover:from-blue-100",
     hoverTo: "hover:to-blue-200",
     iconColor: "text-blue-600",
+  
   },
   jewelery: {
-    icon: Gem,
+    image: "/joi-category.png",
     colorFrom: "from-purple-50",
     colorTo: "to-purple-100",
     hoverFrom: "hover:from-purple-100",
@@ -34,7 +26,7 @@ const categoryConfigs: Record<string, CategoryConfig> = {
     iconColor: "text-purple-600",
   },
   "men's clothing": {
-    icon: ShirtIcon,
+    image: "/men-cateogory.png",
     colorFrom: "from-green-50",
     colorTo: "to-green-100",
     hoverFrom: "hover:from-green-100",
@@ -42,7 +34,7 @@ const categoryConfigs: Record<string, CategoryConfig> = {
     iconColor: "text-green-600",
   },
   "women's clothing": {
-    icon: Sparkles,
+    image: "/womans-category.png",
     colorFrom: "from-pink-50",
     colorTo: "to-pink-100",
     hoverFrom: "hover:from-pink-100",
@@ -52,7 +44,7 @@ const categoryConfigs: Record<string, CategoryConfig> = {
 };
 
 const defaultConfig: CategoryConfig = {
-  icon: Package,
+  image: "/es-store.png",
   colorFrom: "from-gray-50",
   colorTo: "to-gray-100",
   hoverFrom: "hover:from-gray-100",
