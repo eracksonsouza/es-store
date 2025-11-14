@@ -1,11 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CategoryConfig {
-  icon: string;
+  image: string;
   colorFrom: string;
   colorTo: string;
   hoverFrom: string;
   hoverTo: string;
+  iconColor: string;
 }
 
 interface CategoryCardProps {
@@ -18,14 +20,20 @@ export const CategoryCard = ({ categoryName, config }: CategoryCardProps) => {
     <Link
       href={`/categories/${encodeURIComponent(categoryName)}`}
       className={`
-        group p-6 rounded-lg transition-colors duration-300
-        bg-gradient-to-br ${config.colorFrom} ${config.colorTo}
-        ${config.hoverFrom} ${config.hoverTo}
+        group relative overflow-hidden rounded-lg transition-all duration-300
+        hover:shadow-lg
+        h-48
       `}
     >
-      <div className="text-center">
-        <div className="text-4xl mb-4">{config.icon}</div>
-        <h3 className="font-semibold text-gray-900 capitalize">
+      <Image
+        src={config.image}
+        alt={categoryName}
+        fill
+        className="object-cover transition-transform group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+      <div className="absolute inset-0 flex items-end justify-center p-6">
+        <h3 className="font-semibold text-white capitalize text-lg z-10">
           {categoryName.replace("'s", "'s")}
         </h3>
       </div>

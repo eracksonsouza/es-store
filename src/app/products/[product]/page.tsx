@@ -11,6 +11,8 @@ import {
 } from "@/components/ui/breadcrumb";
 import Image from "next/image";
 import Link from "next/link";
+import { Star } from "lucide-react";
+import VirtualFittingRoomButton from "./components/VirtualFittingRoomButton";
 
 interface ProductPageProps {
   params: Promise<{
@@ -24,7 +26,6 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
   return (
     <main className="container mx-auto px-4 py-8">
       <nav className="mb-6 text-sm text-gray-600">
-
         <Breadcrumb className="mb-6">
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -76,7 +77,9 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
               ${productData.price.toFixed(2)}
             </span>
             <div className="flex items-center text-sm text-gray-600">
-              <span className="text-yellow-500">⭐</span>
+              <span className="text-yellow-500">
+                <Star size={16} />
+              </span>
               <span className="ml-1">{productData.rating.rate}</span>
               <span className="ml-1">({productData.rating.count} reviews)</span>
             </div>
@@ -88,12 +91,15 @@ const ProdutcPage = async ({ params }: ProductPageProps) => {
           </div>
           <div className="space-y-4">
             <p className="text-gray-700">{productData.description}</p>
-            <div className="flex gap-4">
+            <div className="flex gap-4 flex-wrap">
               <AddToCartButton product={productData} />
               <Button variant="outline" className="cursor-pointer">
-                {" "}
-                Comprar Agora{" "}
+                Comprar Agora
               </Button>
+              <VirtualFittingRoomButton
+                productTitle={productData.title}
+                category={productData.category}
+              />
             </div>
           </div>
         </div>
